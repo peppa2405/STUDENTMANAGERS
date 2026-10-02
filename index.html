@@ -4,6 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Quản lý học sinh</title>
+<!-- Thêm thư viện chuyển đổi HTML sang PDF -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 <style>
 :root{--ca:.82;--ova:.25;--bgimg:url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 xmlns:xlink=%22http://www.w3.org/1999/xlink%22 viewBox=%220 0 1600 1000%22 preserveAspectRatio=%22xMidYMid slice%22%3E%3Cdefs%3E%3ClinearGradient id=%22g%22 x1=%220%22 y1=%220%22 x2=%221%22 y2=%221%22%3E%3Cstop offset=%220%22 stop-color=%22%23ffd1e3%22/%3E%3Cstop offset=%22.5%22 stop-color=%22%23ffb8d2%22/%3E%3Cstop offset=%221%22 stop-color=%22%23ffe4ef%22/%3E%3C/linearGradient%3E%3Cfilter id=%22b%22 x=%22-30%25%22 y=%22-30%25%22 width=%22160%25%22 height=%22160%25%22%3E%3CfeGaussianBlur stdDeviation=%2240%22/%3E%3C/filter%3E%3Cg id=%22f%22%3E%3Cg fill=%22%23fff%22 fill-opacity=%22.85%22%3E%3Cellipse cy=%22-26%22 rx=%2215%22 ry=%2228%22 transform=%22rotate%280%29%22/%3E%3Cellipse cy=%22-26%22 rx=%2215%22 ry=%2228%22 transform=%22rotate%2872%29%22/%3E%3Cellipse cy=%22-26%22 rx=%2215%22 ry=%2228%22 transform=%22rotate%28144%29%22/%3E%3Cellipse cy=%22-26%22 rx=%2215%22 ry=%2228%22 transform=%22rotate%28216%29%22/%3E%3Cellipse cy=%22-26%22 rx=%2215%22 ry=%2228%22 transform=%22rotate%28288%29%22/%3E%3C/g%3E%3Ccircle r=%227%22 fill=%22%23ff7fae%22/%3E%3C/g%3E%3C/defs%3E%3Crect width=%221600%22 height=%221000%22 fill=%22url%28%23g%29%22/%3E%3Cg filter=%22url%28%23b%29%22%3E%3Ccircle cx=%22250%22 cy=%22200%22 r=%22220%22 fill=%22%23fff%22 fill-opacity=%22.55%22/%3E%3Ccircle cx=%221350%22 cy=%22780%22 r=%22260%22 fill=%22%23ff9ec4%22 fill-opacity=%22.5%22/%3E%3Ccircle cx=%22900%22 cy=%22120%22 r=%22160%22 fill=%22%23ffd9ea%22 fill-opacity=%22.7%22/%3E%3C/g%3E%3Cuse xlink:href=%22%23f%22 transform=%22translate%28170 770%29 scale%282.6%29 rotate%2810%29%22 opacity=%220.8%22/%3E%3Cuse xlink:href=%22%23f%22 transform=%22translate%281420 230%29 scale%283.0%29 rotate%2835%29%22 opacity=%220.75%22/%3E%3Cuse xlink:href=%22%23f%22 transform=%22translate%28760 860%29 scale%281.8%29 rotate%2860%29%22 opacity=%220.7%22/%3E%3Cuse xlink:href=%22%23f%22 transform=%22translate%281180 640%29 scale%281.4%29 rotate%2820%29%22 opacity=%220.65%22/%3E%3Cuse xlink:href=%22%23f%22 transform=%22translate%28330 170%29 scale%281.6%29 rotate%285%29%22 opacity=%220.7%22/%3E%3Cuse xlink:href=%22%23f%22 transform=%22translate%28980 150%29 scale%282.0%29 rotate%2850%29%22 opacity=%220.6%22/%3E%3Cuse xlink:href=%22%23f%22 transform=%22translate%2880 420%29 scale%281.2%29 rotate%2825%29%22 opacity=%220.6%22/%3E%3Cuse xlink:href=%22%23f%22 transform=%22translate%281530 560%29 scale%281.5%29 rotate%2815%29%22 opacity=%220.65%22/%3E%3Ccircle cx=%22560%22 cy=%22300%22 r=%225%22 fill=%22%23fff%22 fill-opacity=%22.7%22/%3E%3Ccircle cx=%22640%22 cy=%22520%22 r=%223%22 fill=%22%23fff%22 fill-opacity=%22.7%22/%3E%3Ccircle cx=%221040%22 cy=%22420%22 r=%224%22 fill=%22%23fff%22 fill-opacity=%22.7%22/%3E%3Ccircle cx=%221250%22 cy=%2290%22 r=%223%22 fill=%22%23fff%22 fill-opacity=%22.7%22/%3E%3Ccircle cx=%22420%22 cy=%22620%22 r=%224%22 fill=%22%23fff%22 fill-opacity=%22.7%22/%3E%3Ccircle cx=%22870%22 cy=%22640%22 r=%223%22 fill=%22%23fff%22 fill-opacity=%22.7%22/%3E%3Ccircle cx=%22200%22 cy=%22540%22 r=%223%22 fill=%22%23fff%22 fill-opacity=%22.7%22/%3E%3Ccircle cx=%221480%22 cy=%22860%22 r=%225%22 fill=%22%23fff%22 fill-opacity=%22.7%22/%3E%3Ccircle cx=%22700%22 cy=%2280%22 r=%224%22 fill=%22%23fff%22 fill-opacity=%22.7%22/%3E%3C/svg%3E");--card:rgba(255,255,255,var(--ca));--ov:rgba(255,238,246,var(--ova));--inp:#fffafc;--bg:#fde8f0;--tx:#3b1c2a;--mu:#8a5a6e;--bd:rgba(214,51,108,.2);--ac:#d6336c;--ok:#178a52;--wa:#c27a00;--er:#d6403a;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 @media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--card:rgba(46,22,36,var(--ca));--ov:rgba(30,10,22,calc(var(--ova) + .35));--inp:#2a1522;--bg:#2a1220;--tx:#fbe9f1;--mu:#d9aac0;--bd:rgba(255,160,200,.24);--ac:#e04a85}}
@@ -86,7 +88,7 @@ input[type=range]{padding:0;accent-color:var(--ac)}
 <div><label>Đến ngày</label><input id="r_to" type="date"></div>
 <div><label>&nbsp;</label><label style="color:var(--tx)"><input id="r_fee" type="checkbox" checked style="width:auto"> Kèm nhắc học phí + QR</label></div></div>
 <div style="margin-top:8px"><label><small>Nhận xét của giáo viên</small></label><textarea id="r_ev" rows="5" style="width:100%"></textarea></div>
-<div class="bar" style="margin-top:8px"><button class="btn g" data-a="draft">Gợi ý nhận xét</button><button class="btn" data-a="dl">Tải báo cáo (.html)</button><small id="r_msg"></small></div></div>
+<div class="bar" style="margin-top:8px"><button class="btn g" data-a="draft">Gợi ý nhận xét</button><button class="btn" data-a="dl">Tải báo cáo (.pdf)</button><small id="r_msg"></small></div></div>
 <div class="w" id="r_prev"></div></section>
 
 <section id="set"><h2>Cài đặt</h2><p class="sub">Thông tin dùng trong báo cáo</p>
@@ -248,7 +250,18 @@ function applyTheme(){var r=document.documentElement.style,S=D.set;r.setProperty
 function setMsg(t){var e=$('#s_msg');e.textContent=t;clearTimeout(setMsg.t);setMsg.t=setTimeout(function(){e.textContent=''},4000)}
 function renderAll(){renderDash();renderStu();renderGrd();renderRep();renderCls();renderAtt();renderFee();renderProf();renderRes()}
 function flash(m){$('#r_msg').textContent=m;clearTimeout(msgT);msgT=setTimeout(function(){$('#r_msg').textContent=''},4000)}
-async function dl(name,data,type){var d=await claude.use('downloads');if(!d){flash('Trình xem này không hỗ trợ tải file.');return}try{await d.save({filename:name,data:new Blob([data],{type:type})})}catch(e){if(e&&e.code!=='declined')flash('Không tải được: '+(e.message||e.code))}}
+
+// Hàm tải xuống chuẩn của trình duyệt
+function dl(name, data, type) {
+    var blob = new Blob([data], {type: type});
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement('a');
+    a.href = url;
+    a.download = name;
+    a.click();
+    URL.revokeObjectURL(url);
+}
+
 // ---- events
 document.addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;if(b.dataset.s){show(b.dataset.s);return}var a=b.dataset.a,id=b.dataset.id;if(!a)return;
  if(/^del/.test(a)&&!b.dataset.arm){b.dataset.arm=1;var o=b.textContent;b.textContent='Chắc chắn?';setTimeout(function(){delete b.dataset.arm;b.textContent=o},3000);return}
@@ -259,7 +272,28 @@ document.addEventListener('click',function(e){var b=e.target.closest('button');i
  else if(a==='addTest'){var n=$('#t_name').value.trim(),m=+$('#t_max').value;if(!n||!(m>0)){alert('Nhập tên bài và thang điểm (>0).');return}D.tests.push({id:uid(),name:n,type:$('#t_type').value,date:$('#t_date').value,max:m});$('#t_name').value='';$('#t_max').value='';save();renderAll()}
  else if(a==='delTest'){D.tests=D.tests.filter(function(t){return t.id!==id});delete D.scores[id];save();renderAll()}
  else if(a==='draft'){var R=getRep();if(!R||!R.rs.length){flash('Chưa có điểm trong giai đoạn này.');return}$('#r_ev').value=draftText(R);renderRep()}
- else if(a==='dl'){var R2=getRep();if(!R2){flash('Chọn học sinh trước.');return}dl('bao-cao-'+R2.s.name.replace(/[^\p{L}\p{N}]+/gu,'-')+'.html','<!DOCTYPE html><html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Báo cáo '+esc(R2.s.name)+'</title><style>body{margin:20px}'+RC+'</style></head><body>'+repBody(R2)+'</body></html>','text/html')}
+ else if(a==='dl'){
+     var R2=getRep();
+     if(!R2){flash('Chọn học sinh trước.');return}
+     flash('Đang tạo file PDF...');
+     var temp = document.createElement('div');
+     temp.style.position = 'absolute'; temp.style.left = '-9999px';
+     temp.style.width = '720px'; temp.style.padding = '20px';
+     temp.style.background = '#fff'; temp.style.color = '#000';
+     temp.innerHTML = repBody(R2);
+     document.body.appendChild(temp);
+     
+     var opt = {
+         margin: 10,
+         filename: 'bao-cao-'+R2.s.name.replace(/[^\p{L}\p{N}]+/gu,'-')+'.pdf',
+         image: { type: 'jpeg', quality: 0.98 },
+         html2canvas: { scale: 2, useCORS: true },
+         jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+     };
+     html2pdf().set(opt).from(temp).save().then(function(){
+         document.body.removeChild(temp);
+     });
+ }
  else if(a==='saveSet'){D.set.name=$('#s_name').value;D.set.bank=$('#s_bank').value;save();renderAll();setMsg('✓ Đã lưu thành công')}
  else if(a==='delQr'){D.set.qr='';save();renderSet();renderRep();setMsg('Đã xóa ảnh QR')}
  else if(a==='addSlot'){var tm=$('#c_time').value;if(!tm)return;slots.push({d:+$('#c_day').value,t:tm});renderSlots()}
